@@ -7,12 +7,12 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
-  #     - run: 
-  #       name: "Display Python Version"
-  #       command: python --version
-  #     - run: 
-  #       name: "Install awscli"
-  #       command: sudo pip install awscli
+      - run: 
+        name: "Display Python Version"
+        command: python --version
+      - run: 
+        name: "Install awscli"
+        command: sudo pip install awscli
   # deploy-dev:
   #   docker:
   #     - image: docker:18.05.0-ce-git
