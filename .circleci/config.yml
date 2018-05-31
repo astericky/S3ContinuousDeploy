@@ -8,6 +8,9 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - run: 
+        name: "Display Python Version"
+        command: python --version
+      - run: 
         name: "Install awscli"
         command: sudo pip install awscli
   deploy-dev:
