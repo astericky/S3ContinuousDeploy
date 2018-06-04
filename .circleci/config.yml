@@ -1,18 +1,26 @@
-earlversion: 2
+version: 2
 jobs:
   build:
     docker:
-      - image: docker:18.05.0-ce-git
+      image: python:3.6.5-apline3.7
     steps:
-      - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
+        name: "Display Python Version"
+        command: python --version
+      run:
+        name: "Install awscli"
+        command: sudo pip install awscli
+    # docker:
+    #   - image: docker:18.05.0-ce-git
+    # steps:
+    #   - checkout
+    #   - setup_remote_docker:
+    #       docker_layer_caching: true
       # - run: 
       #   name: "Display Python Version"
       #   command: python --version
-      - run: 
-        name: "Install awscli"
-        command: sudo pip install awscli
+      # - run: 
+      #   name: "Install awscli"
+      #   command: sudo pip install awscli
   # deploy-dev:
   #   docker:
   #     - image: docker:18.05.0-ce-git
