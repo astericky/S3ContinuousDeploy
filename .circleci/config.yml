@@ -16,7 +16,7 @@ jobs:
           command: docker pull golang:1.10.2-alpine3.7
       - run:
           name: "Install Bash"
-          command: apk --no-cache bash
+          command: apk --no-cache add bash
       # - run:
       #     name: "Install dependencies"
       #     command: |
