@@ -1,9 +1,9 @@
-version: 2
+ealversion: 2
 jobs:
-  
+
   build:
     docker:
-      - image: docker pull circleci/python
+      - image: circleci/python
     steps:
       - checkout
       - run:
@@ -13,8 +13,8 @@ jobs:
           name: "Install awscli"
           command: sudo pip install awscli
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build
+# workflows:
+#   version: 2
+#   build-and-deploy:
+#     jobs:
+#       - build
