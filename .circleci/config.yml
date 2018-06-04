@@ -12,12 +12,13 @@ jobs:
       - run:
           name: "Install awscli"
           command: sudo pip install awscli
-      # - run:
-      #     name: "Build Docker Image"
-      #     command: docker build -t circleci-practice .
       - run:
           name: "Build Docker Image"
           command: docker --version
+      - run:
+          name: "Build Docker Image"
+          command: docker build -t circleci-practice .
+      
 
 workflows:
   version: 2
