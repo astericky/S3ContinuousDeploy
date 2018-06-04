@@ -6,8 +6,8 @@ jobs:
       - image: docker:18.05.0-ce-git
     steps:
       - checkout
-      - setup_remote_docker
-        docker_layer_caching: true
+      # - setup_remote_docker
+      #   docker_layer_caching: true
       - run:
           name: "List files"
           command: ls -al
