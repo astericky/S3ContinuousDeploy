@@ -4,6 +4,8 @@ jobs:
     docker:
       image: python:3.6.5-apline3.7
     steps:
+      checkout
+      run:
         name: "Display Python Version"
         command: python3 --version
       run:
