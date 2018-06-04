@@ -3,12 +3,22 @@ jobs:
 
   build:
     docker:
-      - image: circleci/python
+      - image: docker:18.05.0-ce-git
     steps:
       - checkout
+      - setup_remote_docker
+        docker_layer_caching: true
       - run:
-          name: "Display Python Version"
-          command: python --version
+          name: "List files"
+          command: ls -al
+      # - run:
+      #     name: "Install dependencies"
+      #     command: |
+      #       apk add --no-cache \
+      #       py-pip=10.0.1 pip install \
+      #       docker-compoes==1.12.0 \
+      #       awscli==1.11.76
+
       - run:
           name: "Install awscli"
           command: sudo pip install awscli
