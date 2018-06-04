@@ -5,7 +5,7 @@ jobs:
       image: python:3.6.5-apline3.7
     steps:
         name: "Display Python Version"
-        command: python --version
+        command: python3 --version
       run:
         name: "Install awscli"
         command: sudo pip install awscli
