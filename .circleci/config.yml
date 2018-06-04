@@ -2,12 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: python:3.6.5-apline3.7
+      - image: docker pull circleci/python
     steps:
       - checkout
       - run:
           name: "Display Python Version"
-          command: python3 --version
+          command: python --version
       - run:
           name: "Install awscli"
           command: sudo pip install awscli
