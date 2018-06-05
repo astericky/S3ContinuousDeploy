@@ -23,6 +23,9 @@ jobs:
       - run:
           name: "Build Docker Image"
           command: docker build -t circleci-practice .
+      - run:
+          name: "AWS ECR Login"
+          command: aws ecr get-login --no-include-email
       
 
 workflows:
