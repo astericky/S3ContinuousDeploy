@@ -21,15 +21,14 @@ jobs:
           name: "Install dependencies"
           command: |
             apk add --no-cache bash \
-              python \
-              python-dev \
-              py-pip
+              python3 \
+              py-pip3
       - run:
           name: "Python version"
           command: python3 --version
       - run:
           name: "Install awscli"
-          command: sudo pip install awscli
+          command: sudo pip3 install awscli
       
       - run:
           name: "Build Docker Image"
