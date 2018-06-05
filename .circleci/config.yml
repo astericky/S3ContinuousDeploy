@@ -20,7 +20,10 @@ jobs:
       - run:
           name: "Install dependencies"
           command: |
-            apk add --no-cache bash
+            apk add --no-cache bash \
+              python \
+              python-dev \
+              py-pip \
       - run:
           name: "Python version"
           command: python3 --version
