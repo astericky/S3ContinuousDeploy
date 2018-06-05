@@ -21,9 +21,7 @@ jobs:
           name: "Install dependencies"
           command: |
             apk add --no-cache bash \
-            py-pip=10.0.1 pip install \
-            docker-compose==1.12.2 \
-            awscli==1.11.84
+            py-pip=10.0.1 pip install 
 
       - run:
           name: "Install awscli"
