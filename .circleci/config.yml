@@ -21,7 +21,9 @@ jobs:
           name: "Install dependencies"
           command: |
             apk add --no-cache bash
-
+      - run:
+          name: "Python version"
+          command: python --version
       - run:
           name: "Install awscli"
           command: sudo pip install awscli
