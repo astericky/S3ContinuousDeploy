@@ -22,7 +22,7 @@ jobs:
           command: |
             apk add --no-cache bash \
             py-pip=10.0.1 pip install \
-            docker-compoes==1.12.2 \
+            docker-compose==1.12.2 \
             awscli==1.11.84
 
       - run:
