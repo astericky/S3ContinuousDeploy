@@ -28,7 +28,7 @@ jobs:
           command: python3 --version
       - run:
           name: "Install awscli"
-          command: sudo pip3 install awscli
+          command: pip3 install awscli
       
       - run:
           name: "Build Docker Image"
