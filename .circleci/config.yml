@@ -23,7 +23,7 @@ jobs:
             apk add --no-cache bash \
               python \
               python-dev \
-              py-pip \
+              py-pip
       - run:
           name: "Python version"
           command: python3 --version
