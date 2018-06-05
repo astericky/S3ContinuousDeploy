@@ -23,7 +23,7 @@ jobs:
             apk add --no-cache bash
       - run:
           name: "Python version"
-          command: python --version
+          command: python3 --version
       - run:
           name: "Install awscli"
           command: sudo pip install awscli
