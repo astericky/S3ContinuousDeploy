@@ -11,9 +11,9 @@ jobs:
       - run:
           name: "List files"
           command: ls -al
-      - run:
-          name: "Build Docker Image"
-          command: docker pull golang:1.10.2-alpine3.7
+      # - run:
+      #     name: "Build Docker Image"
+      #     command: docker pull golang:1.10.2-alpine3.7
       # - run:
       #     name: "Install Bash"
       #     command: apk --no-cache add bash
