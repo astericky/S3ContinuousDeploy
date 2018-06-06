@@ -1,0 +1,30 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "cs-aws-test",
+      "host":  {
+        "sourcePath": "/",
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "cs-aws-test",
+      "image": "276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "cs-aws-test",
+          "containerPath": "/app"
+        }
+      ]
+    }
+  ]
+}
