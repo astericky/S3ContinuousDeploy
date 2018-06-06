@@ -1,4 +1,4 @@
-elversion: 2
+version: 2
 jobs:
 
   build:
@@ -15,9 +15,6 @@ jobs:
               python3 \
               py3-pip
       - run:
-          name: "Python version"
-          command: python3 --version
-      - run:
           name: "Install awscli"
           command: pip3 install awscli
       - run:
@@ -29,6 +26,9 @@ jobs:
       - run:
           name: "AWS ECR Login"
           command: aws ecr get-login --no-include-email --region us-east-1
+      - run:
+        name: "Deploy docker image to AWS"
+        command: aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://cs-s3aws-us-east --delete
       
 
 workflows:
