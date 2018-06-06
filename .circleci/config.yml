@@ -19,7 +19,7 @@ jobs:
           command: pip3 install awscli
       - run: 
           name: List files
-          command: pwd
+          command: ls -al
       - run:
           name: Deploy to S3
           command: aws s3 sync . s3://cs-s3aws-us-east --delete
