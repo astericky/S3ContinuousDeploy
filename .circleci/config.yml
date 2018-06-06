@@ -27,8 +27,8 @@ jobs:
           name: "AWS ECR Login"
           command: aws ecr get-login --no-include-email --region us-east-1
       - run:
-        name: "Deploy docker image to AWS"
-        command: aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://cs-s3aws-us-east --delete
+          name: "Deploy docker image to AWS"
+          command: aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://cs-s3aws-us-east --delete
       
 
 workflows:
