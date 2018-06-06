@@ -25,7 +25,7 @@ jobs:
           command: docker tag circleci-practice:latest 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice:latest
       - run:
           name: "AWS ECR Login"
-          command: eval(aws ecr get-login --no-include-email --region us-east-1)
+          command: eval $(aws ecr get-login --no-include-email --region us-east-1)
       - run:
           name: "Push Docker Image to AWS ECR"
           command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice
