@@ -28,9 +28,9 @@ jobs:
       - run:
           name: List files
           command: ls -al ..
-      # - run:
-      #     name: Zip files
-      #     command: zip -r circleci-practice.zip ../circleci-practice
+      - run:
+          name: Zip files
+          command: zip -r circleci-practice.zip ../circleci-practice
       - run:
           name: Deploy to S3
           command: aws s3 sync circleci-practice.zip s3://cs-s3aws-us-east --delete
