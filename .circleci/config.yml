@@ -28,7 +28,7 @@ jobs:
           command: aws ecr get-login --no-include-email --region us-east-1
       - run:
           name: "Push Docker Image to AWS ECR"
-          command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice-app
+          command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice
       
 
 workflows:
