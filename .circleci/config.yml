@@ -1,38 +1,47 @@
 version: 2
 jobs:
 
-  build:
-    docker:
+  deploy-job:
+    docker: 
       - image: docker:18.05.0-ce-git
     steps:
-      - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
       - run:
-          name: "Install dependencies"
-          command: |
-            apk add --no-cache bash \
-              python3 \
-              py3-pip
-      - run:
-          name: "Install awscli"
-          command: pip3 install awscli
-      - run:
-          name: "Build Docker Image"
-          command: docker build -t circleci-practice .
-      - run: 
-          name: "Tag Docker Image"
-          command: docker tag circleci-practice:latest 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice:latest
-      - run:
-          name: "AWS ECR Login"
-          command: eval $(aws ecr get-login --no-include-email --region us-east-1)
-      - run:
-          name: "Push Docker Image to AWS ECR"
-          command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice
+          name: Deploy to S3
+          command: aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://cs-s3aws-us-east --delete
+
+  # build:
+  #   docker:
+  #     - image: docker:18.05.0-ce-git
+  #   steps:
+  #     - checkout
+  #     - setup_remote_docker:
+  #         docker_layer_caching: true
+  #     - run:
+  #         name: "Install dependencies"
+  #         command: |
+  #           apk add --no-cache bash \
+  #             python3 \
+  #             py3-pip
+  #     - run:
+  #         name: "Install awscli"
+  #         command: pip3 install awscli
+  #     - run:
+  #         name: "Build Docker Image"
+  #         command: docker build -t circleci-practice .
+  #     - run: 
+  #         name: "Tag Docker Image"
+  #         command: docker tag circleci-practice:latest 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice:latest
+  #     - run:
+  #         name: "AWS ECR Login"
+  #         command: eval $(aws ecr get-login --no-include-email --region us-east-1)
+  #     - run:
+  #         name: "Push Docker Image to AWS ECR"
+  #         command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice
       
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
+      - build-job
+
