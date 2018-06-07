@@ -30,7 +30,7 @@ jobs:
           command: ls -al ..
       - run:
           name: Zip files
-          command: zip -r circleci-practice.zip ../circleci-practice
+          command: zip -r circleci-practice.zip .
       - run:
           name: List files
           command: ls -al
