@@ -36,7 +36,7 @@ jobs:
           command: pwd && ls -al
       - run:
           name: Deploy to S3
-          command: aws s3 sync ./circleci-practice.zip s3://cs-s3aws-us-east --delete
+          command: aws s3 sync . s3://cs-s3aws-us-east --delete
       - run:
           name: Build Docker Image
           command: docker build -t circleci-practice .
