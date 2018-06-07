@@ -25,15 +25,15 @@ jobs:
       - run:
           name: Install awscli
           command: pip3 install awscli
-      - run:
-          name: List files
-          command: ls -al ..
-      - run:
-          name: Zip files
-          command: zip -r circleci-practice.zip .
-      - run:
-          name: List files
-          command: pwd && ls -al
+      # - run:
+      #     name: List files
+      #     command: ls -al ..
+      # - run:
+      #     name: Zip files
+      #     command: zip -r circleci-practice.zip .
+      # - run:
+      #     name: List files
+      #     command: pwd && ls -al
       - run:
           name: Deploy to S3
           command: aws s3 sync . s3://cs-s3aws-us-east --delete
