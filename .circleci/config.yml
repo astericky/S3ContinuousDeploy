@@ -42,7 +42,7 @@ jobs:
           command: aws s3 --region us-east-1 cp circleci-practice.zip s3://cs-s3aws-us-east --acl public-read
       - run:
           name: Deploy to Elastic Beanstalk
-          command:  aws elasticbeanstalk create-application-version --application-name circleci-practice --version-label deploy-app --source-bundle S3Bucket=cs-s3aws-us-east,S3Key=circleci-practice.zip
+          command: aws elasticbeanstalk --region us-east-1 create-application-version --application-name circleci-practice --version-label deploy-app --source-bundle S3Bucket=cs-s3aws-us-east,S3Key=circleci-practice.zip
       - run:
           name: Build Docker Image
           command: docker build -t circleci-practice .
