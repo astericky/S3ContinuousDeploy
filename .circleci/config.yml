@@ -26,6 +26,9 @@ jobs:
           name: Install awscli
           command: pip3 install awscli
       - run:
+          name: Install awsebcli
+          command: pip3 install awsebcli --upgrade --user
+      - run:
           name: List files
           command: ls -al ..
       - run:
