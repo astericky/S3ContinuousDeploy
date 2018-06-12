@@ -11,7 +11,7 @@
   "containerDefinitions": [
     {
       "name": "cs-aws-test",
-      "image": "276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice",
+      "image": "276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [
