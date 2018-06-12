@@ -17,20 +17,14 @@ jobs:
               py3-pip \
               zip
       - run:
-          name: Present Working Directory
-          command: pwd
-      # - run:
-      #     name: List files
-      #     command: ls -al
-      - run:
           name: Install awscli
           command: pip3 install awscli
       # - run:
       #     name: Install awsebcli
       #     command: pip3 install awsebcli --upgrade --user
-      - run:
-          name: List files
-          command: ls -al ..
+      # - run:
+      #     name: List files
+      #     command: ls -al ..
       - run:
           name: Zip files
           command: zip -r circleci-practice.zip .

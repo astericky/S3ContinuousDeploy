@@ -4,7 +4,7 @@
     {
       "name": "cs-aws-test",
       "host":  {
-        "sourcePath": "/var/app/current/"
+        "sourcePath": "/var/app/current/circleci-practice"
       }
     }
   ],
@@ -23,7 +23,7 @@
       "mountPoints": [
         {
           "sourceVolume": "cs-aws-test",
-          "containerPath": "/app"
+          "containerPath": "/usr/src/app"
         }
       ]
     }
