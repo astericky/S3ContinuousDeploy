@@ -18,7 +18,7 @@ jobs:
               zip
       - run:
           name: Install awscli
-          command: pip3 install awscli
+          command: pip3 install awscli awsebcli
       # - run:
       #     name: Install awsebcli
       #     command: pip3 install awsebcli --upgrade --user
@@ -51,11 +51,11 @@ jobs:
           command: eval $(aws ecr get-login --no-include-email --region us-east-1)
       - run:
           name: Push Docker Image to AWS ECR
-          command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice      
+          command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice   
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build
+# workflows:
+#   version: 2
+#   build-and-deploy:
+#     jobs:
+#       - build
 
