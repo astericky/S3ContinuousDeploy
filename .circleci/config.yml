@@ -44,8 +44,8 @@ jobs:
           name: Push S3 bundle to Elastic Beanstalk
           command: aws elasticbeanstalk --region us-east-1 create-application-version --application-name="CircleCI Practice" --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM --source-bundle S3Bucket=cs-s3aws-us-east,S3Key=circleci-practice.zip
       - run:
-          name: Deploy to Elastic Beanstalk environment
-          command: aws elasticbeanstalk update-environment --environment-name circleci-practice-dev --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM
+          name: Update/Deploy to Elastic Beanstalk environment
+          command: aws elasticbeanstalk --region us-east-1 update-environment --environment-name circleci-practice-dev --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM
       - run:
           name: Build Docker Image
           command: docker build -t circleci-practice .
