@@ -4,7 +4,7 @@
     {
       "name": "cs-aws-test",
       "host":  {
-        "sourcePath": "/var/app/current/circleci-practice"
+        "sourcePath": "/var/app/current/"
       }
     }
   ],
