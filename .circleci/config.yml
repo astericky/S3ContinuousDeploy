@@ -27,7 +27,7 @@ jobs:
       #     command: ls -al ..
       - run:
           name: Zip files
-          command: zip -r circleci-practice.zip .
+          command: zip -r circleci-practice.zip .ebextensions .elasticbeanstalk Dockerfile
       - run:
           name: List files
           command: pwd && ls -al
