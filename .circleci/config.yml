@@ -27,19 +27,13 @@ jobs:
       #     command: ls -al ..
       - run:
           name: Zip files
-          command: zip -r circleci-practice.zip .ebextensions .elasticbeanstalk Dockerfile
+          command: zip -r circleci-practice.zip .ebextensions .elasticbeanstalk Dockerrun.aws.json
       - run:
           name: List files
           command: pwd && ls -al
       - run:
           name: Deploy to S3
           command: aws s3 --region us-east-1 cp circleci-practice.zip s3://cs-s3aws-us-east --acl public-read
-      - run:
-          name: Push S3 bundle to Elastic Beanstalk
-          command: aws elasticbeanstalk --region us-east-1 create-application-version --application-name="CircleCI Practice" --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM --source-bundle S3Bucket=cs-s3aws-us-east,S3Key=circleci-practice.zip
-      - run:
-          name: Update/Deploy to Elastic Beanstalk environment
-          command: aws elasticbeanstalk --region us-east-1 update-environment --environment-name circleci-practice-dev --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM
       - run:
           name: Build Docker Image
           command: docker build -t circleci-practice .
@@ -51,5 +45,12 @@ jobs:
           command: eval $(aws ecr get-login --no-include-email --region us-east-1)
       - run:
           name: Push Docker Image to AWS ECR
-          command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice   
+          command: docker push 276282166840.dkr.ecr.us-east-1.amazonaws.com/circleci-practice 
+      - run:
+          name: Push S3 bundle to Elastic Beanstalk
+          command: aws elasticbeanstalk --region us-east-1 create-application-version --application-name="CircleCI Practice" --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM --source-bundle S3Bucket=cs-s3aws-us-east,S3Key=circleci-practice.zip
+      - run:
+          name: Update/Deploy to Elastic Beanstalk environment
+          command: aws elasticbeanstalk --region us-east-1 update-environment --environment-name circleci-practice-dev --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM
+        
 
