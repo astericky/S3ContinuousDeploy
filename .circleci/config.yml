@@ -27,7 +27,7 @@ jobs:
       #     command: ls -al ..
       - run:
           name: Zip files
-          command: zip -r circleci-practice.zip .ebextensions .elasticbeanstalk Dockerrun.aws.json
+          command: zip -r circleci-practice.zip .elasticbeanstalk Dockerrun.aws.json
       - run:
           name: List files
           command: pwd && ls -al
