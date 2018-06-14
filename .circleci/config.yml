@@ -22,9 +22,6 @@ jobs:
           name: Zip files
           command: zip -r circleci-practice.zip .elasticbeanstalk Dockerrun.aws.json
       - run:
-          name: List files
-          command: pwd && ls -al
-      - run:
           name: Deploy to S3
           command: aws s3 --region us-east-1 cp circleci-practice.zip s3://cs-s3aws-us-east --acl public-read
       - run:
