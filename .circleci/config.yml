@@ -48,6 +48,6 @@ jobs:
           command: aws elasticbeanstalk --region us-east-1 update-environment --environment-name cs-practice-1 --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM
       - run:
           name: Deploy to Elastic Beanstalk environment
-          command: eb deploy cs-practice-1
+          command: eb deploy cs-practice-1 --profile personal
         
 
