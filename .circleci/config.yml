@@ -51,6 +51,6 @@ jobs:
           command: aws elasticbeanstalk --region us-east-1 create-application-version --application-name="CircleCI Practice" --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM --source-bundle S3Bucket=cs-s3aws-us-east,S3Key=circleci-practice.zip
       - run:
           name: Update/Deploy to Elastic Beanstalk environment
-          command: aws elasticbeanstalk --region us-east-1 update-environment --environment-name circleci-practice-dev --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM
+          command: aws elasticbeanstalk --region us-east-1 update-environment --environment-name cs-practice-1 --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM
         
 
