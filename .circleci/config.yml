@@ -19,12 +19,6 @@ jobs:
       - run:
           name: Install awscli
           command: pip3 install awscli awsebcli
-      # - run:
-      #     name: Install awsebcli
-      #     command: pip3 install awsebcli --upgrade --user
-      # - run:
-      #     name: List files
-      #     command: ls -al ..
       - run:
           name: Zip files
           command: zip -r circleci-practice.zip .elasticbeanstalk Dockerrun.aws.json
@@ -52,5 +46,8 @@ jobs:
       - run:
           name: Update/Deploy to Elastic Beanstalk environment
           command: aws elasticbeanstalk --region us-east-1 update-environment --environment-name cs-practice-1 --version-label circleci-practice-dev-$CIRCLE_BUILD_NUM
+      - run:
+          name: Deploy to Elastic Beanstalk environment
+          command: eb deploy
         
 
