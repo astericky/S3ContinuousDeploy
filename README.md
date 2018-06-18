@@ -5,50 +5,50 @@
 ## Set up S3 Bucket
 
 1. log into [aws console](https://console.aws.amazon.com)
-2. click on Services dropdown
-3. click on S3
-4. click Create Bucket
-5. fill out bucket name
-6. set the region you want to use
-7. set properties and set permissions
-8. click create bucket
+1. click on Services dropdown
+1. click on S3
+1. click Create Bucket
+1. fill out bucket name
+1. set the region you want to use
+1. set properties and set permissions
+1. click create bucket
 
 ## Set up IAM Users and Roles
 
 1. click on Services dropdown
-2. click on IAM
-3. click on Users
-4. click on Add User
-5. enter User name
-6. set Access type to programmatic
-7. click Next: Permissions
-8. click Attach Existing Policies Directly
-9. search and select AmazonEC2ContainerRegistryFullAccess
-10. search and select AmazonS3FullAccess
-11. search and select AWSElasticBeanstalkFullAccess
-12. click Next: Review
-13. click Create user
-14. <!— You may need to manually add manual IAM permissions see: https://docs.aws.amazon.com/codebuild/latest/userguide/sample-ecr.html —>
-15. click Roles (located on the left sidebar)
-16. click aws-elasticbeanstalk-ec2-role
-17. click Attach Policy
+1. click on IAM
+1. click on Users
+1. click on Add User
+1. enter User name
+1. set Access type to programmatic
+1. click Next: Permissions
+1. click Attach Existing Policies Directly
+1. search and select AmazonEC2ContainerRegistryFullAccess
+1. search and select AmazonS3FullAccess
+1. search and select AWSElasticBeanstalkFullAccess
+1. click Next: Review
+1. click Create user
+1. <!— You may need to manually add manual IAM permissions see: https://docs.aws.amazon.com/codebuild/latest/userguide/sample-ecr.html —>
+1. click Roles (located on the left sidebar)
+1. click aws-elasticbeanstalk-ec2-role
+1. click Attach Policy
 
 ## Set up Elastic Beanstalk
 
-24. click on Services dropdown
-25. click Elastic Beanstalk
-26. click create new application
-27. fill in application name and optional description
-28. if you aren’t already there navigate to Elastic Beanstalk
-29. click the Actions button next to the name of your application
-30. click create environment
-31. click web server environment
-32. click select
-33. fill out Environment name
-34. fill out domain (just a name for the url of your environment)
-35. select Platform (Multi-container Docker)
-36. select Upload your code
-37. click Upload
-38. select Source code origin Public S3 URL
-39. click Upload
-40. click Create Environment
+1. click on Services dropdown
+1. click Elastic Beanstalk
+1. click create new application
+1. fill in application name and optional description
+1. if you aren’t already there navigate to Elastic Beanstalk
+1. click the Actions button next to the name of your application
+1. click create environment
+1. click web server environment
+1. click select
+1. fill out Environment name
+1. fill out domain (just a name for the url of your environment)
+1. select Platform (Multi-container Docker)
+1. select Upload your code
+1. click Upload
+1. select Source code origin Public S3 URL
+1. click Upload
+1. click Create Environment
