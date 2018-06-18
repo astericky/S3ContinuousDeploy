@@ -32,6 +32,11 @@
 1. click Roles (located on the left sidebar)
 1. click aws-elasticbeanstalk-ec2-role
 1. click Attach Policy
+1. search for and select the following options
+    * AmazonEC2ContainerServiceforEC2Role
+    * AWSElasticBeanstalkWebTier
+    * AWSElasticBeanstalkMulticontainerDocker
+    * AWSElasticBeanstalkWorkerTier
 
 ## Set up Elastic Beanstalk
 
