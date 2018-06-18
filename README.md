@@ -23,9 +23,10 @@
 1. set Access type to programmatic
 1. click Next: Permissions
 1. click Attach Existing Policies Directly
-1. search and select AmazonEC2ContainerRegistryFullAccess
-1. search and select AmazonS3FullAccess
-1. search and select AWSElasticBeanstalkFullAccess
+1. search and select the following options
+    * AmazonEC2ContainerRegistryFullAccess
+    * AmazonS3FullAccess
+    * AWSElasticBeanstalkFullAccess
 1. click Next: Review
 1. click Create user
 1. <!— You may need to manually add manual IAM permissions see: https://docs.aws.amazon.com/codebuild/latest/userguide/sample-ecr.html —>
